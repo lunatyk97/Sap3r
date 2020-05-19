@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <random>
+#include <SDL.h>
 
 #include "Field.h"
 #include "Board.h"
@@ -10,21 +11,34 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    char grajDalej = 't';
+/*
+    game = new Game();
 
+    while (game->running())
+    {
+        game->handleEvents();
+        game->update();
+        game->gameRender();
+    }
+    game->clean();
+    */
+  
+    //Petla inicjujaca gre
+    char grajDalej = 't';
+    
     while (grajDalej == 't')
     {
         cout << "tworzenie gry..." << endl;
-        Game* game = new Game;
+        Game* game = new Game();
 
         cout << "usuwanie gry..." << endl;
+        game->clean();
         delete game;
         cout << "gra usunieta!" << endl;
 
         cout << "chcesz zagrać ponownie? (t/n): ";
         cin >> grajDalej;
     }
-
     return 0;
 }
 

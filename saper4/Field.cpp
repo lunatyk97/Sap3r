@@ -1,11 +1,11 @@
 #include "Field.h"
+#include "Col.h"
 #include <iostream>
-//#include <stdbool.h>
 
 using namespace std;
 
 bool Field::isCovered()
-{
+ {
 	if (Field::covered == true)
 		return true;
 	else

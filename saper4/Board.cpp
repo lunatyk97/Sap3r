@@ -1,7 +1,10 @@
 #include "Board.h"
+#include "Col.h"
+
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
+#include <SDL.h>
 
 using namespace std;
 
@@ -123,7 +126,70 @@ void Board::fillBoardWithZeros()
             plansza2d[y][x].y = y;
             plansza2d[y][x].setCover(true);
             plansza2d[y][x].value = 0;
+
+            fillBoardWithRectangles(x, y, 20, 20);
         }
+    }
+}
+
+
+void Board::fillBoardWithRectangles(int x_pos, int y_pos, int w, int h)
+{
+    plansza2d[y_pos][x_pos].rect.x = x_pos * 21 + 10;
+    plansza2d[y_pos][x_pos].rect.y = y_pos * 21 + 50;
+    plansza2d[y_pos][x_pos].rect.h = h;
+    plansza2d[y_pos][x_pos].rect.w = w;
+}
+
+void Board::fillBoardWithColors(int x, int y, int val) 
+{
+    switch(val)
+    {
+    case 1:
+        plansza2d[y][x].color.r = 255;
+        plansza2d[y][x].color.g = 230;
+        plansza2d[y][x].color.b = 230;
+        break;
+    case 2:
+        plansza2d[y][x].color.r = 255;
+        plansza2d[y][x].color.g = 128;
+        plansza2d[y][x].color.b = 128;
+        break;
+    case 3:
+        plansza2d[y][x].color.r = 255;
+        plansza2d[y][x].color.g = 51;
+        plansza2d[y][x].color.b = 51;
+        break;
+    case 4:
+        plansza2d[y][x].color.r = 255;
+        plansza2d[y][x].color.g = 0;
+        plansza2d[y][x].color.b = 0;
+        break;
+    case 5:
+        plansza2d[y][x].color.r = 204;
+        plansza2d[y][x].color.g = 0;
+        plansza2d[y][x].color.b = 0;
+        break;
+    case 6:
+        plansza2d[y][x].color.r = 179;
+        plansza2d[y][x].color.g = 0;
+        plansza2d[y][x].color.b = 0;
+        break;
+    case 7:
+        plansza2d[y][x].color.r = 153;
+        plansza2d[y][x].color.g = 0;
+        plansza2d[y][x].color.b = 0;
+        break;
+    case 8:
+        plansza2d[y][x].color.r = 102;
+        plansza2d[y][x].color.g = 0;
+        plansza2d[y][x].color.b = 0;
+        break;
+    case 9:
+        plansza2d[y][x].color.r = 80;
+        plansza2d[y][x].color.g = 0;
+        plansza2d[y][x].color.b = 0;
+        break;
     }
 }
 
@@ -186,6 +252,7 @@ void Board::fillBoardWithNum()
                     if (plansza2d[y + 1][x + 1].value == bomb_val) licznik++;
                 }
                 if (licznik != 0) plansza2d[y][x].value = licznik;
+                fillBoardWithColors(x, y, licznik);
             }
         }
     }
