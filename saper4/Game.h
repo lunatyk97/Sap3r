@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "Board.h"
 
 class Game
@@ -18,9 +19,16 @@ private:
 	int size_x;
 	int size_y;
 
+	int points = 0;
+
 	Board* tab;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+	SDL_Rect bombs_window;
+	SDL_Rect points_window;
+	SDL_Rect end_window;
+	TTF_Font* font;
+	TTF_Font* font1;
 
 public:
 	Game();
@@ -36,6 +44,7 @@ public:
 
 	void drawBoard();
 	void setPlayerXY();
+	void setMarkXY(int mx, int my);
 	void setMouseXY();
 	void checkPlayerXY();
 

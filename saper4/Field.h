@@ -10,6 +10,7 @@ class Field
 {
 	private:
 		bool covered;
+		bool mark = false;
 	
 	public:
 		int value;
@@ -24,5 +25,9 @@ class Field
 
 		bool isBoomb();
 		bool isZero();
+		
+		bool marked();
+		void setMark();
+		void unMark();
 };
 

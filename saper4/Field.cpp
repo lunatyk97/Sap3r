@@ -35,3 +35,18 @@ bool Field::isZero()
 		return true;
 	return false;
 }
+
+bool Field::marked()
+{
+	return mark;
+}
+
+void Field::setMark()
+{
+	this->mark = true;
+}
+
+void Field::unMark()
+{
+	this->mark = false;
+}
