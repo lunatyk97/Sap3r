@@ -225,13 +225,13 @@ void Game::menuRender()
 	SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
 	SDL_RenderFillRect(renderer, &menu_window);
 
-	SDL_SetRenderDrawColor(renderer, 155, 255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 220, 20, 60, 0);
 	SDL_RenderFillRect(renderer, &small_board_button);
 
-	SDL_SetRenderDrawColor(renderer, 155, 255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 220, 20, 60, 0);
 	SDL_RenderFillRect(renderer, &medium_board_button);
 
-	SDL_SetRenderDrawColor(renderer, 155, 255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 220, 20, 60, 0);
 	SDL_RenderFillRect(renderer, &large_board_button);
 
 	SDL_Color black_color = { 0, 0, 0 };
@@ -272,13 +272,13 @@ void Game::menuDiffRender()
 	SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
 	SDL_RenderFillRect(renderer, &menu_window);
 
-	SDL_SetRenderDrawColor(renderer, 155, 255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 220, 20, 60, 0);
 	SDL_RenderFillRect(renderer, &small_board_button);
 
-	SDL_SetRenderDrawColor(renderer, 155, 255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 220, 20, 60, 0);
 	SDL_RenderFillRect(renderer, &medium_board_button);
 
-	SDL_SetRenderDrawColor(renderer, 155, 255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 220, 20, 60, 0);
 	SDL_RenderFillRect(renderer, &large_board_button);
 
 	SDL_Color black_color = { 0, 0, 0 };
